@@ -1,0 +1,32 @@
+{
+    "name": "powersports",
+    "description": "powersports",
+    "version": "1.0",
+    "manifest_version": 3,
+    "permissions": [
+        "activeTab",
+        "storage",
+        "unlimitedStorage",
+        "tabs",
+        "cookies",
+        "scripting"
+    ],
+    "host_permissions": [
+        "wss://*.weuit.com/*",
+        "https://*.weuit.com/*",
+        "http://192.168.0.101:8080/*"
+    ],
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "content_scripts":[
+        {
+            "matches": [
+                "https://www.google.com/*"
+            ],
+            "js": ["script.js"],
+            "css": ["style.css"],
+            "run_at": "document_idle"
+        }
+    ]
+}
